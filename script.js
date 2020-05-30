@@ -8,27 +8,41 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// Create character strings and myString
+
+const lowerCase = 'abcdefghijklmnopqrstuvwxyz';
+const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const numbers = '0123456789';
+const special = ' !"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'
+let myString = "";
+
 // Define generatePassword function
 function generatePassword() {
+  selectString();
   let password = "";
   for (let i = 0; i< passwordLength; i++) {
-  let char = Math.floor(Math.random() * lowerCase.length + 1);
+  let char = Math.floor(Math.random() * myString.length + 1);
   console.log(char);
-  console.log(lowerCase.charAt(char));
-  password += lowerCase.charAt(char);
+  console.log(myString.charAt(char));
+  password += myString.charAt(char);
   }
+  console.log(myString);
   return password;
+}
+
+function selectString() {
+  if (lowerConfirm === true && upperConfirm === false && numberConfirm === false && specialConfirm === false) {
+    myString = lowerCase;
+  } else if (lowerConfirm === true && upperConfirm === true && numberConfirm === false && specialConfirm === false) {
+    myString = lowerCase + upperCase;
+  } else if (lowerConfirm === true && upperConfirm === true && numberConfirm === true && specialConfirm === false) {
+    myString = lowerCase + upperCase + numbers;
+  } else if (lowerConfirm === true && upperConfirm === true && numberConfirm === true && specialConfirm === true)
+    myString = lowerCase + upperCase + numbers + special;
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// Create character strings
-
-const lowerCase = 'abcdefghijklmnopqrstuvwxyz'
-const upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const numbers = '0123456789'
-//const specialChar = ' !"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~'
 
 // Ask user for length of password
 let passwordLength = prompt("How long would you like your password to be? (8-128 characters please)");
