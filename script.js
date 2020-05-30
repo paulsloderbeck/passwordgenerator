@@ -34,5 +34,10 @@ const numbers = '0123456789'
 let passwordLength = prompt("How long would you like your password to be? (8-128 characters please)");
 console.log("This is the password length " + passwordLength);
 
+//Ask user for type of password characters using a series of confirm prompts
+const lowerConfirm = confirm("Would you like to include Lower Case characters?");
+const upperConfirm = confirm("Would you like to include Upper Case characters?");
+const numberConfirm = confirm("Would you like to use numbers?");
+const specialConfirm = confirm("Would you like to use special characters?");
 
 writePassword();
