@@ -37,8 +37,30 @@ function selectString() {
     myString = lowerCase + upperCase;
   } else if (lowerConfirm === true && upperConfirm === true && numberConfirm === true && specialConfirm === false) {
     myString = lowerCase + upperCase + numbers;
-  } else if (lowerConfirm === true && upperConfirm === true && numberConfirm === true && specialConfirm === true)
+  } else if (lowerConfirm === true && upperConfirm === true && numberConfirm === true && specialConfirm === true) {
     myString = lowerCase + upperCase + numbers + special;
+  } else if (lowerConfirm === false && upperConfirm === true && numberConfirm === true && specialConfirm === true) {
+    myString = upperCase + numbers + special;
+  } else if (lowerConfirm === false && upperConfirm === false && numberConfirm === true && specialConfirm === true) {
+    myString = numbers + special;
+  } else if (lowerConfirm === true && upperConfirm === false && numberConfirm === false && specialConfirm === true) {
+    myString = lowerCase + special;
+  } else if (lowerConfirm === false && upperConfirm === true && numberConfirm === false && specialConfirm === true) {
+    myString = upperCase + special;
+  } else if (lowerConfirm === false && upperConfirm === true && numberConfirm === true && specialConfirm === false) {
+    myString = upperCase + numbers;
+  } else if (lowerConfirm === true && upperConfirm === false && numberConfirm === true && specialConfirm === false) {
+    myString = lowerCase + numbers;
+  } else if (lowerConfirm === true && upperConfirm === true && numberConfirm === false && specialConfirm === true) {
+    myString = lowerCase + upperCase + special;
+  } else if (lowerConfirm === true && upperConfirm === false && numberConfirm === true && specialConfirm === true) {
+    myString = lowerCase + numbers + special;
+  } else if (lowerConfirm === false && upperConfirm === true && numberConfirm === false && specialConfirm === false) {
+    myString = upperCase;
+  } else if (lowerConfirm === false && upperConfirm === false && numberConfirm === true && specialConfirm === false) {
+    myString = numbers;
+  } else if (lowerConfirm === false && upperConfirm === false && numberConfirm === false && specialConfirm === true) {
+    myString = special;}  
 }
 
 // Add event listener to generate button
