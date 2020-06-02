@@ -86,8 +86,8 @@ if (passwordLength < 8) {
 //Ask user for type of password characters using a series of confirm prompts
 const lowerConfirm = confirm("Would you like to include Lower Case characters? (Okay for yes, cancel for no)");
 const upperConfirm = confirm("Would you like to include Upper Case characters? (Okay for yes, cancel for no)");
-const numberConfirm = confirm("Would you like to use numbers? (Okay for yes, cancel for no)");
-const specialConfirm = confirm("Would you like to use special characters? (Okay for yes, cancel for no)");
+const numberConfirm = confirm("Would you like to include numbers? (Okay for yes, cancel for no)");
+const specialConfirm = confirm("Would you like to include special characters? (Okay for yes, cancel for no)");
 
 // Use location reload to prevent user from proceeding without a character string
 if (lowerConfirm === false && upperConfirm === false && numberConfirm === false && specialConfirm === false) {
