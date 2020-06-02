@@ -67,8 +67,21 @@ function selectString() {
 generateBtn.addEventListener("click", writePassword);
 
 // Ask user for length of password
-let passwordLength = prompt("How long would you like your password to be? (8-128 characters please)");
-console.log("This is the password length " + passwordLength);
+let passwordLength = selectLength ()
+function selectLength () {
+  let passwordLength = prompt("How long would you like your password to be? (8-128 characters please)");
+  console.log("This is the password length " + passwordLength);
+  return passwordLength;
+} 
+
+if (passwordLength < 8) {
+  alert("Your password must be between 8 and 128 characters.");
+  passwordLength = selectLength();
+} else if (passwordLength > 128) {
+  alert("Your password must be between 8 and 128 characters.");
+  passwordLength = selectLength();
+} else {passwordLength = passwordLength}
+
 
 //Ask user for type of password characters using a series of confirm prompts
 const lowerConfirm = confirm("Would you like to include Lower Case characters? (Okay for yes, cancel for no)");
@@ -78,7 +91,7 @@ const specialConfirm = confirm("Would you like to use special characters? (Okay 
 
 // Use location reload to prevent user from proceeding without a character string
 if (lowerConfirm === false && upperConfirm === false && numberConfirm === false && specialConfirm === false) {
-  prompt("You must select at least one type of character");
+  alert("You must select at least one type of character");
   location.reload();
 } 
 
